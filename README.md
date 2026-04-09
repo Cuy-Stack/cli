@@ -1,31 +1,57 @@
 # cuystack-cli
 
-To install dependencies:
+CLI sederhana untuk menjalankan dokumentasi statis cuystack secara lokal.
+
+## Requirements
+
+- Bun (runtime)
+
+## Install dependencies
 
 ```bash
 bun install
 ```
 
-To run:
+## Menjalankan CLI secara lokal
 
 ```bash
-bun run index.ts
+bun ./bin/cli.ts docs
 ```
 
-This project was created using `bun init` in bun v1.3.9. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Command
 
-## Docs command
+### docs
 
-Run docs server (default port `6969`):
+Menjalankan docs server dari folder docs-ui.
+
+Default port: 6969
 
 ```bash
 cuystack docs
 ```
 
-Custom port:
+### Opsi port
+
+Semua format berikut didukung:
 
 ```bash
 cuystack docs -p 7001
 cuystack docs --port 7001
 cuystack docs --port=7001
 ```
+
+Port valid ada di rentang 1-65535.
+
+## Output
+
+Saat server berhasil start, CLI akan menampilkan URL seperti:
+
+```text
+Docs running at http://localhost:7001
+```
+
+## Development notes
+
+- Entry point CLI: bin/cli.ts
+- Docs server: src/docs.ts
+- Static assets docs: docs-ui/
